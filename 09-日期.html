@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件示例</title>
+    <link rel="stylesheet" type="text/css" href="layui/css/layui.css">
+    <script src="layui/layui.js" type="text/javascript" charset="UTF-8"></script>
+</head>
+<body>
+<script type="text/javascript">
+    /*导航依赖element模块*/
+    layui.use('laydate', function () {
+        let laydate = layui.laydate;
+
+        laydate.render({
+            elem: '#date1'
+            ,format: 'yyyy/MM/dd'
+            ,value: new Date()
+            });
+        laydate.render({
+            elem: '#date2'
+            ,type: "year"
+        });
+        laydate.render({
+            elem: '#date3'
+            ,type: "month"
+        });
+        laydate.render({
+            elem: '#date4'
+            ,type: "time"
+        });
+        laydate.render({
+            elem: '#date5'
+            ,type: "datetime"
+        });
+    });
+</script>
+<div class="layui-input-inline">
+    <input class="layui-input" id="date1" type="text">
+</div>
+<hr>
+<div class="layui-input-inline">
+    <input class="layui-input" id="date2" type="text">
+</div>
+<hr>
+<div class="layui-input-inline">
+    <input class="layui-input" id="date3" type="text">
+</div>
+<hr>
+<div class="layui-input-inline">
+    <input class="layui-input" id="date4" type="text">
+</div>
+<hr>
+<div class="layui-input-inline">
+    <input class="layui-input" id="date5" type="text">
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据表格</title>
+    <link rel="stylesheet" type="text/css" href="layui/css/layui.css">
+    <script src="layui/layui.js" type="text/javascript" charset="UTF-8"></script>
+</head>
+<body>
+<script type="text/javascript">
+    layui.use('table', function () {
+        let table = layui.table;
+
+        table.render({
+            elem: '#demo',
+            url: 'js/user.json',
+            page: true,
+            height: 'full',
+            cols: [[
+                {field: 'id', title: '用户编号', sort: true, width: 120},
+                {field: 'username', title: '用户姓名', width: 80},
+                {field: 'sex', title: '性别', width: 80},
+                {field: 'city', title: '城市', width: 80},
+                {field: 'sign', title: '签名', width: 80}
+            ]],
+        });
+    });
+</script>
+<table id="demo"></table>
+</body>
+</html>

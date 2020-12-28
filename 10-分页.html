@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分页</title>
+    <link rel="stylesheet" type="text/css" href="layui/css/layui.css">
+    <script src="layui/layui.js" type="text/javascript" charset="UTF-8"></script>
+</head>
+<body>
+<script type="text/javascript">
+    layui.use('laypage',function () {
+       let laypage=layui.laypage;
+
+       laypage.render({
+           elem: 'page',//属性绑定的是容器的ID值，不需要加#号
+           count: '100',
+           limit: '5',//每一页的条数
+           limits: [5,10,20,30],
+           layout: ['prev','page','next','limit','count'],//自定义排版
+           groups: 3,//连续显示的页码数
+           jump: function (obj, first) { //切换分页的回调
+               console.log(obj.curr);
+               console.log(obj.limit);
+               if (!first){
+                   //do something
+               }
+           }
+       })
+    });
+</script>
+<div id="page">
+
+</div>
+</body>
+</html>
